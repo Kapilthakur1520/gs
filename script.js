@@ -1,9 +1,10 @@
-// Smooth Scrolling for Links
+// Simple scroll effect for smooth navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
         });
     });
 });
