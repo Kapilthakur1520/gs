@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #1e1e2e;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #2c2f48, #1e1e2e);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero-section h1 span {
+    color: #4cb8ff;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #4cb8ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #38a1e6;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background: #292b3a;
+}
+
+.feature-card {
+    background: #1f2235;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.feature-card h3 {
+    color: #4cb8ff;
+}
+
+/* About Me */
+.about-me {
+    padding: 3rem 1rem;
+    background: #1f2235;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-image {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.info-grid div {
+    background: #292b3a;
+    padding: 0.75rem;
+    border-radius: 5px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #292b3a;
+    padding: 2rem 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: #4cb8ff;
+}
+
+.stat-item p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1e1e2e;
+    color: #888;
+}
