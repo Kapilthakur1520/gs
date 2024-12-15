@@ -1,83 +1,86 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapil Thakur | Portfolio</title>
+    <title>Kapil Thakur | Professional Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Kapil <span>Thakur</span></h1>
-            <p>Geospatial Engineer | Deep Learning Enthusiast</p>
-            <img src="assets/profile.jpg" alt="Kapil Thakur" class="profile-image">
-            <a href="#contact" class="btn-primary">Get Connected</a>
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="profile-container">
+            <img src="assets/profile.jpg" alt="Kapil Thakur" class="profile-pic">
+            <h1>Kapil Thakur</h1>
+            <p>Researcher | Geospatial Engineer | 3D Reconstruction | GIS & Remote Sensing</p>
         </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <h3>Deeper Skillset</h3>
-            <p>Proficient in GIS, 3D Reconstruction, and advanced spatial analysis.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Creative Work</h3>
-            <p>Developed innovative geospatial pipelines for real-world solutions.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Strong Dedication</h3>
-            <p>Committed to excellence in geospatial engineering and research.</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>
+                I am an M.Tech Geospatial Engineering student at IIT Roorkee with experience in 3D reconstruction,
+                GIS, remote sensing, and machine learning techniques. I specialize in spatial data visualization,
+                photogrammetry, and LiDAR.
+            </p>
+        </section>
 
-    <!-- About Section -->
-    <section class="about-me">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="assets/profile.jpg" alt="About Image" class="about-image">
-            <div class="about-text">
-                <p>
-                    I am a passionate geospatial engineer with expertise in spatial data analysis,
-                    3D modeling, photogrammetry, and deep learning techniques. My work focuses
-                    on developing innovative solutions for complex engineering problems.
-                </p>
-                <div class="info-grid">
-                    <div><strong>Phone:</strong> +91-8352067517</div>
-                    <div><strong>Email:</strong> kapilthakur1520@gmail.com</div>
-                    <div><strong>Location:</strong> India</div>
-                    <div><strong>Specialization:</strong> Geospatial Engineering</div>
-                </div>
-                <a href="#contact" class="btn-primary">Download CV</a>
+        <!-- Education Section -->
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>M.Tech (Geospatial Engineering)</strong> - IIT Roorkee, 2024 - CGPA: 7.8</li>
+                <li><strong>B.Tech (Civil Engineering)</strong> - NIT Hamirpur, 2021 - CGPA: 7.51</li>
+                <li><strong>Class XII</strong> - Sigma School of Science, 2017 - 75.4%</li>
+                <li><strong>Class X</strong> - S Vidya Mandir Nirmand, 2015 - 82.4%</li>
+            </ul>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="content-section">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Apprentice/Trainee</strong> - SJVNL (Hydroelectric Project) | 1 Year</li>
+                <li><strong>Teaching Assistant</strong> - IIT Roorkee | Conducted labs for Photogrammetry and Geodata Processing</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>3D Reconstruction using Novel View Synthesis</strong> - IIT Roorkee</li>
+                <li><strong>GeoSAM-2</strong> - Enhanced SAM for Geospatial Data Annotation</li>
+                <li><strong>Coal Mine Subsidence</strong> - Differential SAR Interferometry Analysis</li>
+                <li><strong>Watershed Delineation & LULC Mapping</strong> - Remote Sensing Analysis over Kullu District</li>
+            </ul>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="content-section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>HTML & CSS</span>
+                <span>ArcGIS</span>
+                <span>QGIS</span>
+                <span>AutoCAD</span>
+                <span>LiDAR Processing</span>
+                <span>Photogrammetry</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stat-item">
-            <h3>20</h3>
-            <p>Digital Products</p>
-        </div>
-        <div class="stat-item">
-            <h3>280</h3>
-            <p>Direct Clients</p>
-        </div>
-        <div class="stat-item">
-            <h3>3K</h3>
-            <p>Total Projects</p>
-        </div>
-        <div class="stat-item">
-            <h3>9+</h3>
-            <p>Awards Won</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Kapil Thakur | All Rights Reserved</p>
+        <p>Contact: <a href="mailto:kapil_t@ce.iitr.ac.in">kapil_t@ce.iitr.ac.in</a> | Phone: 8894933769</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
