@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DGS - Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific Styles */
+        .placeholder {
+            text-align: center;
+            margin: 3rem auto;
+            padding: 2rem;
+            max-width: 800px;
+            background-color: #f7f9fc;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .placeholder h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .visualize-link {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .visualize-link:hover {
+            background-color: #2980b9;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorials.html" class="active">Tutorials</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="research.html">Research Papers</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1 style="text-align: center; margin-top: 2rem; color: #2c3e50;">Tutorials</h1>
+        <div class="placeholder">
+            <h2>Coming Soon!</h2>
+            <p>We are currently gathering material to provide you with detailed tutorials on <strong>3D Gaussian Splatting</strong> and its applications.</p>
+            <p>In the meantime, you can <strong>visualize 3D Gaussian Splatting</strong> by clicking the button below.</p>
+            <a href="visualise.html" class="visualize-link">Visualize 3D Gaussian Splatting</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 3DGS. All rights reserved.</p>
+    </footer>
+</body>
+</html>

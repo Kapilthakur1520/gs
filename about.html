@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Kapil Thakur</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific Styles for About Section */
+        .about-container {
+            background-color: #fff;
+            margin: 0rem auto;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 750px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about-heading {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #555;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .skills-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-box {
+            background-color: #f7f9fc;
+            padding: 1rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 0 1 200px; /* Fixed box width */
+            height: 100px; /* Fixed height for all boxes */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Profile Picture */
+        .profile-container {
+            text-align: center;
+            margin-top: 0px;
+        }
+        .hero {
+            margin-bottom: 1rem; /* Reduced bottom margin */
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="research.html">Research Papers</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="profile-container">
+            <img src="assets/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h2>Kapil Thakur</h2>
+            <p>Researcher | Geospatial Engineer | 3D Reconstruction | GIS & Remote Sensing</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <main>
+        <div class="about-container">
+            <div class="about-content">
+                <p>
+                    I am <strong>Kapil Thakur</strong>, a passionate <strong>Researcher</strong> and <strong>Geospatial Engineer</strong> currently pursuing my Master's degree in Civil Engineering at <strong>IIT Roorkee</strong>. My research focuses on <em>"3D Reconstruction Using Deep Learning Techniques and Novel View Synthesis"</em>, where I integrate data from <strong>LiDAR</strong>, photogrammetry, drone imagery, and 360-degree videos to create high-quality 3D models.
+                </p>
+                <p>
+                    I hold a <strong>B.Tech</strong> in Civil Engineering from <strong>NIT Hamirpur</strong>, and I previously worked as a <em>Civil Engineer</em> at <strong>SJVN</strong>, contributing to critical infrastructure projects. Over the years, I have honed skills in GIS tools like <strong>QGIS</strong> and <strong>ArcGIS</strong>, drone data processing, LiDAR, photogrammetry, and programming in <strong>Python</strong> and <strong>MATLAB</strong>.
+                </p>
+                <p>
+                    My passion lies in applying <strong>Machine Learning</strong> and <strong>Deep Learning</strong> techniques to solve complex geospatial challenges and push the boundaries of 3D modeling technology.
+                </p>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <div class="skill-box">3D Reconstruction</div>
+                <div class="skill-box">LiDAR Processing</div>
+                <div class="skill-box">Photogrammetry</div>
+                <div class="skill-box">GIS Tools: QGIS, ArcGIS</div>
+                <div class="skill-box">Drone Imagery</div>
+                <div class="skill-box">Python & MATLAB</div>
+                <div class="skill-box">Machine Learning</div>
+                <div class="skill-box">Deep Learning</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kapil Thakur. All rights reserved.</p>
+    </footer>
+</body>
+</html>

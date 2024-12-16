@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Gaussian Plot in Pyodide</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        /* Page-specific Styles */
+        /* Global Reset and Body Margin */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f9fc;
+            line-height: 1.6;
+            box-sizing: border-box;
+        }
+
+        /* Add consistent spacing */
+        main {
+            margin: 0 auto;
+            padding: 2rem;
+            max-width: 1000px; /* Centered and restricted width */
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Instructions Section */
+        .instructions {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .instructions h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .instructions p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .instructions li {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .instructions li span {
+            font-weight: normal;
+            color: #555;
+            margin-left: 0.5rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="research.html">Research Papers</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Title -->
+        <main>
+            <div class="instructions">
+                <p>
+                    <strong> Use the controls on the right-hand side to interact with the plot. Once you've set your desired 
+                    parameters, click the Update Plot button to render the updated visualization.</strong>
+                </p>
+            </div>
+ 
+
+
+
+        <!-- Plot and Controls -->
+        <div style="display: flex; gap: 1rem;">
+            <!-- Plot Area -->
+            <div id="plot-area" style="width: 70%; height: 600px;"></div>
+
+            <!-- Controls -->
+            <div style="width: 30%; padding: 20px; background-color: #f4f4f4; border-radius: 8px;">
+                <h3>Controls</h3>
+                <p>Scale:</p>
+                X: <input id="scale-x" type="number" value="1" step="0.1" style="width: 50px;"> 
+                Y: <input id="scale-y" type="number" value="1" step="0.1" style="width: 50px;"> 
+                Z: <input id="scale-z" type="number" value="1" step="0.1" style="width: 50px;">
+                
+                <p>Rotation:</p>
+                X: <input id="rotate-x" type="number" value="0" step="1" style="width: 50px;"> 
+                Y: <input id="rotate-y" type="number" value="0" step="1" style="width: 50px;"> 
+                Z: <input id="rotate-z" type="number" value="0" step="1" style="width: 50px;">
+
+                <p>Color:</p>
+                R: <input id="color-r" type="number" value="0.5" step="0.1" min="0" max="1" style="width: 50px;"> 
+                G: <input id="color-g" type="number" value="0.5" step="0.1" min="0" max="1" style="width: 50px;"> 
+                B: <input id="color-b" type="number" value="0.5" step="0.1" min="0" max="1" style="width: 50px;">
+
+                <p>Opacity:</p>
+                <input id="opacity" type="number" value="0.5" step="0.1" min="0.1" max="1.0" style="width: 50px;">
+
+                <button id="update-plot">Update Plot</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 3DGS. All rights reserved.</p>
+    </footer>
+
+    <!-- Script for Plotting -->
+    <script>
+        async function main() {
+            // Load Pyodide
+            const pyodide = await loadPyodide();
+            await pyodide.loadPackage("numpy");
+
+            async function updatePlot() {
+                // Get input values
+                const scaleX = parseFloat(document.getElementById("scale-x").value);
+                const scaleY = parseFloat(document.getElementById("scale-y").value);
+                const scaleZ = parseFloat(document.getElementById("scale-z").value);
+                const rotateX = parseFloat(document.getElementById("rotate-x").value);
+                const rotateY = parseFloat(document.getElementById("rotate-y").value);
+                const rotateZ = parseFloat(document.getElementById("rotate-z").value);
+                const colorR = parseFloat(document.getElementById("color-r").value) * 255;
+                const colorG = parseFloat(document.getElementById("color-g").value) * 255;
+                const colorB = parseFloat(document.getElementById("color-b").value) * 255;
+                const opacity = parseFloat(document.getElementById("opacity").value);
+
+                // Python code for Gaussian data
+                const pythonCode = `
+import numpy as np
+import json
+
+def generate_gaussian():
+    u = np.linspace(0, 2 * np.pi, 50)
+    v = np.linspace(0, np.pi, 50)
+    x = ${scaleX} * np.outer(np.cos(u), np.sin(v))
+    y = ${scaleY} * np.outer(np.sin(u), np.sin(v))
+    z = ${scaleZ} * np.outer(np.ones_like(u), np.cos(v))
+    return x.tolist(), y.tolist(), z.tolist()
+
+x, y, z = generate_gaussian()
+json.dumps({"x": x, "y": y, "z": z})
+                `;
+
+                const result = await pyodide.runPythonAsync(pythonCode);
+                const data = JSON.parse(result);
+
+                // Update Plot
+                const trace = {
+                    type: "surface",
+                    x: data.x,
+                    y: data.y,
+                    z: data.z,
+                    colorscale: [[0, `rgb(${colorR},${colorG},${colorB})`], [1, `rgb(${colorR},${colorG},${colorB})`]],
+                    opacity: opacity
+                };
+
+                Plotly.newPlot("plot-area", [trace], { title: "3D Gaussian Visualization" });
+            }
+
+            document.getElementById("update-plot").addEventListener("click", updatePlot);
+            updatePlot();
+        }
+
+        main();
+    </script>
+</body>
+</html>
