@@ -3,46 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3DGS - What is 3D Gaussian Splatting?</title>
+    <title>3DGS - Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <style>
-        /* Blog-like styling with margins */
-        main {
-            margin: 4rem;
-            max-width: 800px; /* Narrower width for blog feel */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-            text-align: center;
-        }
-        h2 {
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem;
-            color: #2c3e50;
-        }
-        p, ul {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        ul {
-            padding-left: 1.5rem;
-        }
-        li {
-            margin-bottom: 0.8rem;
-        }
-        a {
-            color: #3498db;
-            text-decoration: underline;
-        }
-        a:hover {
-            color: #e74c3c;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -52,7 +15,6 @@
                 <h1>3DGS</h1>
             </div>
             <ul>
-                <li><a href="home.html">Tutorials</a></li>
                 <li><a href="tutorials.html">Tutorials</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="research.html">Research Papers</a></li>
@@ -60,67 +22,29 @@
                 <li><a href="community.html">Community</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="what-is-3dgs.html">What is 3DGS?</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content (Blog Style) -->
+    <!-- Main Content -->
     <main>
-        <h1>What is 3D Gaussian Splatting?</h1>
-        <p>A deep dive into the revolutionary technique transforming 3D visualization and reconstruction.</p>
+        <section class="hero">
+            <h2>Welcome to 3DGS</h2>
+            <p>Your go-to resource for tutorials, news, and research on <strong>3D Gaussian Splatting</strong>.</p>
+            <button class="cta-button" onclick="navigateTo('tutorials.html')">Get Started</button>
+        </section>
 
-        <h2>Introduction to 3DGS</h2>
-        <p>In the rapidly evolving field of computer graphics, <strong>3D Gaussian Splatting (3DGS)</strong> has emerged as a groundbreaking method for rendering high-quality 3D scenes in real-time. Unlike traditional polygon-based techniques or even newer neural approaches like Neural Radiance Fields (NeRF), 3DGS uses Gaussian functions—think of them as 3D "blobs"—to represent and visualize scenes with unprecedented efficiency and detail. Introduced in recent research, this technique promises to bridge the gap between photorealism and interactivity, making it a game-changer for industries like gaming, film, and autonomous systems.</p>
-        <p>At its core, 3DGS takes images or video data, converts them into a sparse point cloud, and then optimizes these points as Gaussian splats to recreate a scene. The result? A 3D model you can view from any angle, rendered at speeds exceeding 100 frames per second at 1080p resolution—something NeRF struggles to achieve. Whether you’re a developer, researcher, or enthusiast, understanding 3DGS opens the door to cutting-edge applications in 3D reconstruction and beyond.</p>
-
-        <h2>Technical Foundations</h2>
-        <p>How does 3DGS work? It starts with <strong>Structure from Motion (SfM)</strong>, a process that analyzes multiple 2D images to estimate a 3D structure, producing a point cloud. Each point in this cloud is then represented as a Gaussian—a mathematical function defining a 3D ellipsoid with attributes like position, scale, rotation, color, and opacity. These Gaussians are optimized using a process similar to gradient descent, aligning the rendered output with the input images.</p>
-        <p>Unlike NeRF, which relies on implicit neural networks to encode scenes (requiring heavy computation), 3DGS uses an <strong>explicit representation</strong>. This means the scene data is stored directly as Gaussian parameters, enabling faster rendering via a tile-based rasterizer. The technique builds on earlier ideas from Lee Westover’s Gaussian splatting in the 1990s but adapts them for modern GPUs, achieving real-time performance without sacrificing quality.</p>
-        <p>Compared to polygon meshes, 3DGS excels at rendering volumetric data—like smoke or clouds—where triangles fall short. Against NeRF, it offers a leap in speed and editability, though it may trade off some of NeRF’s ability to capture ultra-fine details in static scenes.</p>
-
-        <h2>Applications Across Industries</h2>
-        <p>3DGS’s versatility makes it a powerhouse across multiple domains:</p>
-        <ul>
-            <li><strong>Film and Media</strong>: Studios use 3DGS to craft photorealistic environments, cutting production time while maintaining visual fidelity. Imagine a sci-fi cityscape rendered instantly from drone footage.</li>
-            <li><strong>Gaming and VR</strong>: Real-time rendering at high frame rates makes 3DGS ideal for immersive game worlds and virtual reality experiences, where lag kills the illusion.</li>
-            <li><strong>Autonomous Driving</strong>: Simulations for self-driving cars benefit from 3DGS’s ability to generate detailed, dynamic environments—think roads with moving traffic—faster than traditional methods.</li>
-            <li><strong>Text-to-3D</strong>: Emerging research integrates 3DGS with AI to create 3D models from text prompts, opening creative avenues for designers and storytellers.</li>
-            <li><strong>Spatial Journalism</strong>: Outlets like the <a href="https://rd.nytimes.com/projects/gaussian-splatting/" target="_blank">New York Times R&D</a> use it to reconstruct scenes—like historical events—in 3D for immersive storytelling.</li>
-        </ul>
-        <p>These applications showcase 3DGS’s ability to handle both static and dynamic scenes, making it a flexible tool for professionals and innovators alike.</p>
-
-        <h2>Tools and Resources</h2>
-        <p>Getting started with 3DGS is easier than ever thanks to a growing ecosystem of tools:</p>
-        <ul>
-            <li><a href="https://poly.cam/tools/gaussian-splatting" target="_blank">Polycam</a>: A free, user-friendly platform to create 3DGS scenes from photos or videos—perfect for beginners.</li>
-            <li><a href="https://github.com/graphdeco-inria/gaussian-splatting" target="_blank">Official GitHub Repository</a>: The original implementation by Kerbl et al., offering code for developers to experiment with.</li>
-            <li><strong>Nerf Studio</strong>: A command-line tool for training 3DGS models, integrating with NeRF workflows (see <a href="https://www.chaos.com/blog/3d-gaussian-splatting-new-frontier-in-rendering" target="_blank">Chaos blog</a>).</li>
-            <li><strong>V-Ray 7</strong>: Adds ray-tracing support for Gaussian splats, ideal for high-end rendering in professional pipelines.</li>
-            <li><a href="https://aescripts.com/gaussian-splatting/" target="_blank">After Effects Plugin</a>: Import and tweak 3DGS files (.ply) in post-production workflows.</li>
-        </ul>
-        <p>For learning, check out <a href="https://learnopencv.com/3d-gaussian-splatting/" target="_blank">LearnOpenCV’s tutorial</a> or <a href="https://huggingface.co/blog/gaussian-splatting" target="_blank">Hugging Face’s introduction</a>. These resources provide step-by-step guides and code snippets to master 3DGS.</p>
-
-        <h2>Advantages and Challenges</h2>
-        <p>Why choose 3DGS? Here’s what sets it apart:</p>
-        <ul>
-            <li><strong>Speed</strong>: Real-time rendering (≥100 fps at 1080p) outpaces NeRF’s minutes-long computations.</li>
-            <li><strong>Efficiency</strong>: Lower computational demands make it accessible on consumer hardware.</li>
-            <li><strong>Quality</strong>: Captures reflections, fine details, and volumetric effects with photorealistic precision.</li>
-            <li><strong>Flexibility</strong>: Explicit representation allows easy scene editing—add, remove, or tweak Gaussians on the fly.</li>
-        </ul>
-        <p>However, challenges remain. 3DGS can struggle with extremely complex scenes where NeRF’s neural approach excels. Memory usage can also balloon with large point clouds, though research into compression (e.g., by Aras Pranckevičius) is addressing this. Balancing quality and performance is an ongoing refinement process.</p>
-
-        <h2>Future Outlook</h2>
-        <p>The future of 3DGS is bright, with research pushing its boundaries:</p>
-        <ul>
-            <li><strong>Dynamic Scenes</strong>: Papers like “Dynamic 3D Gaussians” explore animating scenes—think moving objects or people.</li>
-            <li><strong>AI Integration</strong>: Combining 3DGS with machine learning could enhance scene understanding or generation.</li>
-            <li><strong>Optimization</strong>: Advances in anti-aliasing and depth regularization (noted in GitHub updates) promise even crisper visuals.</li>
-        </ul>
-        <p>As tools mature and communities grow—see Reddit’s r/computergraphics—3DGS could become the standard for real-time 3D rendering, reshaping how we interact with digital worlds.</p>
-
-        <h2>Conclusion</h2>
-        <p>3D Gaussian Splatting is more than a technical curiosity—it’s a transformative tool redefining 3D visualization. From its ability to render scenes in real-time to its applications in film, gaming, and beyond, 3DGS offers a compelling blend of speed, quality, and accessibility. Whether you’re here to learn, build, or innovate, dive into the resources on this site—starting with our <a href="tutorials.html">tutorials</a> or <a href="tools.html">tools</a>—and join the 3DGS revolution.</p>
+        <section class="info">
+            <div class="info-box">
+                <h3>What is 3DGS?</h3>
+                <p>3D Gaussian Splatting (3DGS) is a cutting-edge technique in 3D reconstruction and visualization. <a href="what-is-3dgs.html">Explore its applications, tools, and research here</a>.</p>
+            </div>
+            <div class="info-box">
+                <h3>Why Choose 3DGS?</h3>
+                <p>With our resources, you will get access to in-depth tutorials, the latest research, and a growing community of experts.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
