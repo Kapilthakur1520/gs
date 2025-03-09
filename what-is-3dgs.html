@@ -44,36 +44,23 @@
         a:hover {
             color: #e74c3c;
         }
-        /* Left-aligned navigation bar */
+        /* Left-aligned horizontal navigation */
         header nav {
             display: flex;
-            flex-direction: column; /* Stack logo and menu vertically */
-            align-items: flex-start; /* Align items to the left */
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center;
             padding: 1rem 2rem;
         }
         header .logo {
-            margin-bottom: 1rem; /* Space between logo and menu */
+            margin-right: 2rem; /* Space between logo and menu */
         }
         header ul {
-            list-style: none;
+            display: flex;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column; /* Vertical menu */
         }
         header ul li {
-            margin: 0.5rem 0; /* Vertical spacing between items */
-        }
-        header ul li a {
-            padding: 0.5rem 1rem;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border-radius: 5px;
-        }
-        header ul li a:hover {
-            background-color: #e74c3c;
+            margin-left: 1.5rem; /* Original spacing from style.css */
         }
     </style>
 </head>
