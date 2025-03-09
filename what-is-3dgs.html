@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <style>
-        /* Blog-like styling with margins */
+        /* Blog-like styling with margins and justified text */
         main {
             margin: 2rem;
             max-width: 800px; /* Narrower width for blog feel */
@@ -25,11 +25,13 @@
             margin: 2rem 0 1rem;
             color: #2c3e50;
         }
-        p, ul {
+        p {
             margin-bottom: 1.5rem;
             line-height: 1.8;
+            text-align: justify; /* Justified text for blog style */
         }
         ul {
+            margin-bottom: 1.5rem;
             padding-left: 1.5rem;
         }
         li {
@@ -41,6 +43,37 @@
         }
         a:hover {
             color: #e74c3c;
+        }
+        /* Left-aligned navigation bar */
+        header nav {
+            display: flex;
+            flex-direction: column; /* Stack logo and menu vertically */
+            align-items: flex-start; /* Align items to the left */
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            margin-bottom: 1rem; /* Space between logo and menu */
+        }
+        header ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Vertical menu */
+        }
+        header ul li {
+            margin: 0.5rem 0; /* Vertical spacing between items */
+        }
+        header ul li a {
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+        header ul li a:hover {
+            background-color: #e74c3c;
         }
     </style>
 </head>
