@@ -1,26 +1,88 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3DGS - News</title>
+    <title>3DGS - What is 3D Gaussian Splatting?</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Blog-like styling with margins and justified text */
+        main {
+            margin: 2rem;
+            max-width: 800px; /* Narrower width for blog feel */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #2c3e50;
+        }
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            text-align: justify; /* Justified text for blog style */
+        }
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        a {
+            color: #3498db;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #e74c3c;
+        }
+        /* Left-aligned horizontal navigation */
+        header nav {
+            display: flex;
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            margin-right: 2rem; /* Space between logo and menu */
+        }
+        header ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        header ul li {
+            margin-left: 1.5rem; /* Original spacing from style.css */
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tutorials.html">Tutorials</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="research.html">Research Papers</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav>
+            <div class="logo">
+                <h1>3DGS</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="research.html">Research Papers</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <h1>Research Papers</h1>
         <p>Explore and access research papers related to 3DGS.</p>
