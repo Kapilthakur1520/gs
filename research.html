@@ -19,7 +19,6 @@
             margin-bottom: 1rem;
             color: #2c3e50;
             text-align: center;
-            font-weight: bold;
         }
         h2 {
             font-size: 1.8rem;
@@ -63,7 +62,20 @@
         header ul li {
             margin-left: 1.5rem; /* Original spacing from style.css */
         }
+        body { font-family: Arial, sans-serif; margin: 40px auto; max-width: 800px; line-height: 1.6; }
+        .paper { border-bottom: 1px solid #ddd; padding: 20px; background-color: #fdfdfd; border-radius: 5px; margin-bottom: 20px; }
+        .title { font-size: 20px; font-weight: bold; color: #333; cursor: pointer; }
+        .title:hover { color: #007BFF; }
+        .details { display: none; margin-top: 10px; text-align: justify; }
+        .links a { margin-right: 10px; color: #007BFF; text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
     </style>
+    <script>
+        function toggleDetails(id) {
+            var element = document.getElementById(id);
+            element.style.display = (element.style.display === "none") ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
