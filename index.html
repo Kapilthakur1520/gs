@@ -6,6 +6,21 @@
     <title>3DGS - Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Simple margin adjustments for readability */
+        main {
+            margin: 2rem;
+        }
+        h1, h3 {
+            margin-bottom: 1rem;
+        }
+        p, ul {
+            margin-bottom: 1.5rem;
+        }
+        .info-box {
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -22,27 +37,34 @@
                 <li><a href="community.html">Community</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="what-is-3dgs.html">What is 3DGS?</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main>
-        <section class="hero">
-            <h2>Welcome to 3DGS</h2>
-            <p>Your go-to resource for tutorials, news, and research on <strong>3D Gaussian Splatting</strong>.</p>
-            <button class="cta-button" onclick="navigateTo('tutorials.html')">Get Started</button>
-        </section>
+        <h1>Welcome to 3DGS</h1>
+        <p>Your go-to resource for tutorials, news, and research on <strong>3D Gaussian Splatting</strong>.</p>
+        <p><button onclick="navigateTo('tutorials.html')">Get Started</button></p>
 
         <section class="info">
             <div class="info-box">
                 <h3>What is 3DGS?</h3>
                 <p>3D Gaussian Splatting (3DGS) is a cutting-edge technique in 3D reconstruction and visualization. <a href="what-is-3dgs.html">Explore its applications, tools, and research here</a>.</p>
+                <ul>
+                    <li>Real-time rendering with high-quality visuals.</li>
+                    <li>Uses Gaussian functions instead of polygons or neural networks.</li>
+                    <li>Links to detailed insights on <a href="what-is-3dgs.html">this page</a>.</li>
+                </ul>
             </div>
             <div class="info-box">
                 <h3>Why Choose 3DGS?</h3>
-                <p>With our resources, you will get access to in-depth tutorials, the latest research, and a growing community of experts.</p>
+                <p>With our resources, you will get access to:</p>
+                <ul>
+                    <li>In-depth tutorials for hands-on learning.</li>
+                    <li>The latest research updates.</li>
+                    <li>A growing community of experts.</li>
+                </ul>
             </div>
         </section>
     </main>
